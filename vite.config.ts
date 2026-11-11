@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Served from https://<user>.github.io/coffe/ on GitHub Pages
+// Relative asset paths so the build works on any GitHub Pages repo path
 export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/coffe/' : '/',
+  base: command === 'build' ? './' : '/', // relative: works under any repo name
   plugins: [react()],
   server: { port: 5178 },
 }));
